@@ -127,3 +127,31 @@ if (i<33) Serial.print(".");
   Serial.println(" ");
   */
 }
+/*
+Don't forget to put on your sd header files for each type of files you will serve.
+this script will take the extention of served file ( .jpg , .js , .htm ) and put header before file.
+tinyfat library dont handle bigger extention than 3 letters !
+
+this is the header file for htm content named htm.hea 
+select a editor who will put cr and lf (\r\n) at end of line notepad ++ for exemple (edition/convert line feeds)
+
+HTTP/1.0 200 OK\r\n
+Content-Type: text/html\r\n
+\r\n
+
+one empty line a the end with cr lf
+
+you can add various options in header 
+
+Server: Arduino ethercard fred mod\r\n
+
+to specify the name of the server
+
+Cache-control: max-age=1800\r\n
+
+for static page who not need to reloaded every time.
+
+you will need 404.hea for file not found
+
+and txt.hea for file who dont have header created
+
